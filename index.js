@@ -1,1 +1,31 @@
 // Write your solution in this file!
+ const employee = {
+    name: 'Jackie Chan',
+    streetAddress: 'Beijing',
+   };
+function updateEmployeeWithKeyAndValue(employee, key, value) {
+    return {...employee, [key] : value
+    };
+};
+
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
+    employee[key] = value;
+    return employee;
+}
+
+function deleteFromEmployeeByKey(employee, key) {
+    const newEmployee = { ...employee }; 
+    if (newEmployee.hasOwnProperty(key)) {
+      delete newEmployee[key]; 
+      return newEmployee;
+    } else {
+      return undefined; 
+    };
+  };
+
+  function destructivelyDeleteFromEmployeeByKey(employee, key) {
+    delete employee[key]; 
+    return employee; 
+  }
+  
+  
